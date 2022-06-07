@@ -30,6 +30,7 @@ master_header+="...\n\n"
 echo -e "$master_header" > out/rime/${DICT_PREFIX}.${DICT_MASTER_NAME}.dict.yaml
 
 if [[ ! -z "$COPY" ]]; then
+  find $COPY -type f -name "$SP_CHAR" -delete
   cp out/rime/* "$COPY"
 fi
 
